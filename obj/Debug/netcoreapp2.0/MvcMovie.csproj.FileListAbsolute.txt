@@ -1,0 +1,10 @@
+/home/ducky/Development/MvcMovie/bin/Debug/netcoreapp2.0/MvcMovie.deps.json
+/home/ducky/Development/MvcMovie/bin/Debug/netcoreapp2.0/MvcMovie.runtimeconfig.json
+/home/ducky/Development/MvcMovie/bin/Debug/netcoreapp2.0/MvcMovie.runtimeconfig.dev.json
+/home/ducky/Development/MvcMovie/bin/Debug/netcoreapp2.0/MvcMovie.dll
+/home/ducky/Development/MvcMovie/bin/Debug/netcoreapp2.0/MvcMovie.pdb
+/home/ducky/Development/MvcMovie/obj/Debug/netcoreapp2.0/MvcMovie.csproj.CoreCompileInputs.cache
+/home/ducky/Development/MvcMovie/obj/Debug/netcoreapp2.0/MvcMovie.AssemblyInfoInputs.cache
+/home/ducky/Development/MvcMovie/obj/Debug/netcoreapp2.0/MvcMovie.AssemblyInfo.cs
+/home/ducky/Development/MvcMovie/obj/Debug/netcoreapp2.0/MvcMovie.dll
+/home/ducky/Development/MvcMovie/obj/Debug/netcoreapp2.0/MvcMovie.pdb
