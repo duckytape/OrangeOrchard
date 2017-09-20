@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using MvcMovie.Models;
+using OrangeOrchard.Models;
 
-namespace MvcMovie
+namespace OrangeOrchard
 {
     public class Program
     {

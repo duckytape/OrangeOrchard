@@ -1,6 +1,6 @@
 using System;
 
-namespace MvcMovie.Models
+namespace OrangeOrchard.Models
 {
     public class ErrorViewModel
     {

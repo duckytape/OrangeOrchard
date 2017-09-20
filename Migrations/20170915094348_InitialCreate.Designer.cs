@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using MvcMovie.Models;
+using OrangeOrchard.Models;
 using System;
 
-namespace MvcMovie.Migrations
+namespace OrangeOrchard.Migrations
 {
-    [DbContext(typeof(MvcMovieContext))]
+    [DbContext(typeof(OrangeOrchardContext))]
     [Migration("20170915094348_InitialCreate")]
     partial class InitialCreate
     {
@@ -20,7 +20,7 @@ namespace MvcMovie.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452");
 
-            modelBuilder.Entity("MvcMovie.Models.Movie", b =>
+            modelBuilder.Entity("OrangeOrchard.Models.Tree", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -35,7 +35,7 @@ namespace MvcMovie.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Tree");
                 });
 #pragma warning restore 612, 618
         }

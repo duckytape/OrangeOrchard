@@ -1,0 +1,10 @@
+/home/ducky/Development/OrangeOrchard/bin/Debug/netcoreapp2.0/OrangeOrchard.deps.json
+/home/ducky/Development/OrangeOrchard/bin/Debug/netcoreapp2.0/OrangeOrchard.runtimeconfig.json
+/home/ducky/Development/OrangeOrchard/bin/Debug/netcoreapp2.0/OrangeOrchard.runtimeconfig.dev.json
+/home/ducky/Development/OrangeOrchard/bin/Debug/netcoreapp2.0/OrangeOrchard.dll
+/home/ducky/Development/OrangeOrchard/bin/Debug/netcoreapp2.0/OrangeOrchard.pdb
+/home/ducky/Development/OrangeOrchard/obj/Debug/netcoreapp2.0/OrangeOrchard.csproj.CoreCompileInputs.cache
+/home/ducky/Development/OrangeOrchard/obj/Debug/netcoreapp2.0/OrangeOrchard.AssemblyInfoInputs.cache
+/home/ducky/Development/OrangeOrchard/obj/Debug/netcoreapp2.0/OrangeOrchard.AssemblyInfo.cs
+/home/ducky/Development/OrangeOrchard/obj/Debug/netcoreapp2.0/OrangeOrchard.dll
+/home/ducky/Development/OrangeOrchard/obj/Debug/netcoreapp2.0/OrangeOrchard.pdb

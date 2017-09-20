@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using MvcMovie.Models;
+using OrangeOrchard.Models;
 
-namespace MvcMovie
+namespace OrangeOrchard
 {
     public class Startup
     {
@@ -26,8 +26,8 @@ namespace MvcMovie
             // Add fraework services.
             services.AddMvc();
 
-            services.AddDbContext<MvcMovieContext>(options => 
-                    options.UseSqlite("Data Source=MvcMovie.db"));
+            services.AddDbContext<OrangeOrchardContext>(options => 
+                    options.UseSqlite("Data Source=OrangeOrchard.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

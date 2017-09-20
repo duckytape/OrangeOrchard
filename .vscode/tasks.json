@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/MvcMovie.csproj"
+                "${workspaceRoot}/OrangeOrchard.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

@@ -13121,11 +13121,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ducky/Development/MvcMovie/MvcMovie.csproj",
-      "projectName": "MvcMovie",
-      "projectPath": "/home/ducky/Development/MvcMovie/MvcMovie.csproj",
+      "projectUniqueName": "/home/ducky/Development/OrangeOrchard/OrangeOrchard.csproj",
+      "projectName": "OrangeOrchard",
+      "projectPath": "/home/ducky/Development/OrangeOrchard/OrangeOrchard.csproj",
       "packagesPath": "/home/ducky/.nuget/packages/",
-      "outputPath": "/home/ducky/Development/MvcMovie/obj/",
+      "outputPath": "/home/ducky/Development/OrangeOrchard/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

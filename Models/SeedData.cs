@@ -3,32 +3,32 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 
-namespace MvcMovie.Models
+namespace OrangeOrchard.Models
 {
     public static class SeedData
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new MvcMovieContext(
-                serviceProvider.GetRequiredService<DbContextOptions<MvcMovieContext>>()))
+            using (var context = new OrangeOrchardContext(
+                serviceProvider.GetRequiredService<DbContextOptions<OrangeOrchardContext>>()))
             {
                 // Look for any movies.
-                if (context.Movie.Any())
+                if (context.Tree.Any())
                 {
                     return;   // DB has been seeded
                 }
 
-                context.Movie.AddRange(
-                     new Movie
+                context.Tree.AddRange(
+                     new Tree
                      {
-                         Title = "When Harry Met Sally",
-                         ReleaseDate = DateTime.Parse("1989-1-11"),
-                         Genre = "Romantic Comedy",
-                         Price = 7.99M,
-                         Rating = "R"
+                         Title = "OrangeTree1",
+                         YearPlanted = DateTime.Parse("1989"),
+                         Age = 28,
+                         Height = 10,
+                         NumOranges = 20
                      },
 
-                     new Movie
+                     new Tree
                      {
                          Title = "Ghostbusters ",
                          ReleaseDate = DateTime.Parse("1984-3-13"),
@@ -37,7 +37,7 @@ namespace MvcMovie.Models
                          Rating = "PG"
                      },
 
-                     new Movie
+                     new Tree
                      {
                          Title = "Ghostbusters 2",
                          ReleaseDate = DateTime.Parse("1986-2-23"),
@@ -46,7 +46,7 @@ namespace MvcMovie.Models
                          Rating = "PG13+"
                      },
 
-                   new Movie
+                   new Tree
                    {
                        Title = "Rio Bravo",
                        ReleaseDate = DateTime.Parse("1959-4-15"),

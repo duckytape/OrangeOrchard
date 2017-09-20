@@ -11,10 +11,9 @@ using System;
 namespace OrangeOrchard.Migrations
 {
     [DbContext(typeof(OrangeOrchardContext))]
-    [Migration("20170917160523_AddingRatingField")]
-    partial class AddingRatingField
+    partial class OrangeOrchardContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

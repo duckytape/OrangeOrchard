@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MvcMovie.Migrations
+namespace OrangeOrchard.Migrations
 {
     public partial class AddingRatingField : Migration
     {
@@ -10,7 +10,7 @@ namespace MvcMovie.Migrations
         {
             migrationBuilder.AddColumn<string>(
                 name: "Rating",
-                table: "Movie",
+                table: "Tree",
                 type: "TEXT",
                 nullable: true);
         }
@@ -19,7 +19,7 @@ namespace MvcMovie.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "Rating",
-                table: "Movie");
+                table: "Tree");
         }
     }
 }

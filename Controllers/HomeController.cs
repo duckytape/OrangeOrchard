@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MvcMovie.Models;
+using OrangeOrchard.Models;
 
-namespace MvcMovie.Controllers
+namespace OrangeOrchard.Controllers
 {
     public class HomeController : Controller
     {
