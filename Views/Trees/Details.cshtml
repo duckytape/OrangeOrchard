@@ -1,0 +1,66 @@
+@model OrangeOrchard.Models.Tree
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section Scripts
+{
+    <script type="text/javascript" src="@Url.Content("https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/examples/vendor/aframe/build/aframe.min.js")"></script>
+    <script type="text/javascript" src="Url.Content("https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js")"></script>
+
+}
+<div style='margin : 0px overflow: hidden;'>
+    <h2>Details</h2>
+
+    <script>
+        AFRAME.registerComponent('scale-on-mouseenter', {
+        schema: {
+            to: {default: '0.5'}
+        },
+        init: function () {
+            var data = this.data;
+            this.el.addEventListener('mouseenter', function () {
+            this.setAttribute('radius', data.to);
+            });
+        }
+        });
+    </script>
+
+    <!-- create 3d scene -->
+    <a-scene embdedded arjs='trackingMethod: best;'>
+        <a-assets>
+        <a-asset-item id="tree-obj" src="https://ucarecdn.com/f42822e6-aa9d-4f7a-8ab7-f7bc3670e68c/"></a-asset-item>
+        <a-asset-item id="tree-mtl" src="https://ucarecdn.com/d2a1464a-d738-4ff8-baf8-5378217b3de3/"></a-asset-item>
+        </a-assets>
+        <!-- ar content goes here -->
+        <!-- simple content - simmple sphere added and made it transparent and put it ON TOP of marker-->
+
+        <!-- oranges -->
+        <a-sphere position="0.3 -0.5 0" radius="0.1" color="#FF4500" material="opacity: 0.5" scale-on-mouseenter="to: 0"></a-sphere>
+
+        <!--Orange tree -->
+        <a-entity scale='0.01 0.01 0.01' rotation='7.7 -180.0 .057' position='-0.06 -0.5 0.2' obj>
+        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+        </a-entity>
+
+        <a-text position="0 0.5 0" value="Hello, World! Please work soon"></a-text>
+        <!-- can also do this inline but less performant -->
+        <!--a-entity obj-model="obj: url(/path/to/tree.obj); mtl: url(/path/to/tree.mtl)"></a-entity -->
+
+        <!-- add the camera! and tell it what marker you are using (hiro in this case) -->
+        <a-marker-camera preset='hiro'></a-marker-camera>
+        <a-camera>
+        <!-- a-camera-static/ -->
+        <a-cursor></a-cursor>
+        </a-camera>
+    </a-scene>
+</div>
+
+
+
+<!-- notes for later
+@Html.DisplayNameFor(model => model.Name)
+@Html.DisplayFor(model => model.Name)
+@Html.DisplayNameFor(model => model.ReleaseDate)
+@Html.DisplayFor(model => model.ReleaseDate)-->

@@ -33,7 +33,7 @@ namespace OrangeOrchard.Migrations
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Name");
 
                     b.HasKey("ID");
 

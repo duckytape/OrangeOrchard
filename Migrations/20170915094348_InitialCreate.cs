@@ -17,7 +17,7 @@ namespace OrangeOrchard.Migrations
                     Genre = table.Column<string>(type: "TEXT", nullable: true),
                     Price = table.Column<decimal>(type: "TEXT", nullable: false),
                     ReleaseDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Title = table.Column<string>(type: "TEXT", nullable: true)
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

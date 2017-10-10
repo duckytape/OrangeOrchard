@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.EntityFrameworkCore.Storage.Internal;
 using OrangeOrchard.Models;
 using System;
 
@@ -24,15 +23,13 @@ namespace OrangeOrchard.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("Age");
+
                     b.Property<string>("Genre");
 
-                    b.Property<decimal>("Price");
-
-                    b.Property<string>("Rating");
-
-                    b.Property<DateTime>("ReleaseDate");
-
-                    b.Property<string>("Title");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60);
 
                     b.HasKey("ID");
 

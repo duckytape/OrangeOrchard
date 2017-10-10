@@ -5,7 +5,7 @@ namespace OrangeOrchard.Models
 {
     public class MovieGenreViewModel
     {
-        public List<Tree> movies;
+        public List<Tree> trees;
         public SelectList genres;
         public string movieGenre { get; set; }
     }

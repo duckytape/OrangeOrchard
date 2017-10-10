@@ -4,15 +4,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.EntityFrameworkCore.Storage.Internal;
 using OrangeOrchard.Models;
 using System;
 
 namespace OrangeOrchard.Migrations
 {
     [DbContext(typeof(OrangeOrchardContext))]
-    [Migration("20170915094348_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20170926145947_InitialOrangeOrchard")]
+    partial class InitialOrangeOrchard
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,13 +24,13 @@ namespace OrangeOrchard.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("Age");
+
                     b.Property<string>("Genre");
 
-                    b.Property<decimal>("Price");
-
-                    b.Property<DateTime>("ReleaseDate");
-
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60);
 
                     b.HasKey("ID");
 

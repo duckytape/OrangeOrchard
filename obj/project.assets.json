@@ -13121,11 +13121,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ducky/Development/OrangeOrchard/OrangeOrchard.csproj",
+      "projectUniqueName": "/home/ducky/Development/dotnet/Codetest/OrangeOrchard/OrangeOrchard.csproj",
       "projectName": "OrangeOrchard",
-      "projectPath": "/home/ducky/Development/OrangeOrchard/OrangeOrchard.csproj",
+      "projectPath": "/home/ducky/Development/dotnet/Codetest/OrangeOrchard/OrangeOrchard.csproj",
       "packagesPath": "/home/ducky/.nuget/packages/",
-      "outputPath": "/home/ducky/Development/OrangeOrchard/obj/",
+      "outputPath": "/home/ducky/Development/dotnet/Codetest/OrangeOrchard/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

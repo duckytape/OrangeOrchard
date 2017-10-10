@@ -12,7 +12,7 @@ namespace OrangeOrchard.Models
             using (var context = new OrangeOrchardContext(
                 serviceProvider.GetRequiredService<DbContextOptions<OrangeOrchardContext>>()))
             {
-                // Look for any movies.
+                // Look for any trees.
                 if (context.Tree.Any())
                 {
                     return;   // DB has been seeded
@@ -21,39 +21,28 @@ namespace OrangeOrchard.Models
                 context.Tree.AddRange(
                      new Tree
                      {
-                         Title = "OrangeTree1",
-                         YearPlanted = DateTime.Parse("1989"),
+                         Name = "OrangeTree1",
+                         //YearPlanted = DateTime.Parse("1989"),
                          Age = 28,
-                         Height = 10,
-                         NumOranges = 20
+                         //NumOranges = 20
+                         Genre = "one",
                      },
-
                      new Tree
                      {
-                         Title = "Ghostbusters ",
-                         ReleaseDate = DateTime.Parse("1984-3-13"),
-                         Genre = "Comedy",
-                         Price = 8.99M,
-                         Rating = "PG"
+                         Name = "OrangeTree2",
+                         //YearPlanted = DateTime.Parse("1989"),
+                         Age = 28,
+                         //NumOranges = 20
+                         Genre = "two",
                      },
-
-                     new Tree
+                    new Tree
                      {
-                         Title = "Ghostbusters 2",
-                         ReleaseDate = DateTime.Parse("1986-2-23"),
-                         Genre = "Comedy",
-                         Price = 9.99M,
-                         Rating = "PG13+"
-                     },
-
-                   new Tree
-                   {
-                       Title = "Rio Bravo",
-                       ReleaseDate = DateTime.Parse("1959-4-15"),
-                       Genre = "Western",
-                       Price = 3.99M,
-                       Rating = "G"
-                   }
+                         Name = "OrangeTree3",
+                         //YearPlanted = DateTime.Parse("1989"),
+                         Age = 28,
+                         //NumOranges = 20
+                         Genre = "three",
+                     }
                 );
                 context.SaveChanges();
             }

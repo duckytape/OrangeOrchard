@@ -9,16 +9,16 @@ using OrangeOrchard.Models;
 
 namespace OrangeOrchard.Controllers
 {
-    public class MoviesController : Controller
+    public class TreesController : Controller
     {
         private readonly OrangeOrchardContext _context;
 
-        public MoviesController(OrangeOrchardContext context)
+        public TreesController(OrangeOrchardContext context)
         {
             _context = context;
         }
 
-        // GET: Movies
+        // GET: Trees
         // Requires using Microsoft.AspNetCore.Mvc.Rendering;
         public async Task<IActionResult> Index(string movieGenre, string searchString)
         {
@@ -27,22 +27,22 @@ namespace OrangeOrchard.Controllers
                                             orderby m.Genre
                                             select m.Genre;
 
-            var movies = from m in _context.Tree
+            var trees = from m in _context.Tree
                         select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                movies = movies.Where(s => s.Title.Contains(searchString));
+                trees = trees.Where(s => s.Name.Contains(searchString));
             }
 
             if (!String.IsNullOrEmpty(movieGenre))
             {
-                movies = movies.Where(x => x.Genre == movieGenre);
+                trees = trees.Where(x => x.Genre == movieGenre);
             }
 
             var movieGenreVM = new MovieGenreViewModel();
             movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            movieGenreVM.movies = await movies.ToListAsync();
+            movieGenreVM.trees = await trees.ToListAsync();
 
             return View(movieGenreVM);
         }
@@ -53,7 +53,7 @@ namespace OrangeOrchard.Controllers
             return "From [HttpPost]Index: filter on " + searchString;
         }
 
-        // GET: Movies/Details/5
+        // GET: Trees/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -61,39 +61,39 @@ namespace OrangeOrchard.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Tree
+            var tree = await _context.Tree
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (movie == null)
+            if (tree == null)
             {
                 return NotFound();
             }
 
-            return View(movie);
+            return View(tree);
         }
 
-        // GET: Movies/Create
+        // GET: Trees/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Movies/Create
+        // POST: Trees/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Tree movie)
+        public async Task<IActionResult> Create([Bind("ID,Name,Age")] Tree tree)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movie);
+                _context.Add(tree);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            return View(tree);
         }
 
-        // GET: Movies/Edit/5
+        /* CURRENTLY NOT IN USE/ GET: Trees/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -101,37 +101,37 @@ namespace OrangeOrchard.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Tree.SingleOrDefaultAsync(m => m.ID == id);
-            if (movie == null)
+            var  = await _context.Tree.SingleOrDefaultAsync(m => m.ID == id);
+            if ( == null)
             {
                 return NotFound();
             }
-            return View(movie);
+            return View();
         }
 
-        // POST: Movies/Edit/5
+        // POST: Trees/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,Price,Rating")] Tree movie)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Age,Height,NumOranges")] Tree )
         {
-            if (id != movie.ID)
+            if (id != .ID)
             {
                 return NotFound();
             }
-            //verifies data can modify movie object
+            //verifies data can modify  object
             if (ModelState.IsValid)
             {
                 try
                 {
-                    //saves edited movie data to database
-                    _context.Update(movie);
+                    //saves edited  data to database
+                    _context.Update();
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.ID))
+                    if (!MovieExists(.ID))
                     {
                         return NotFound();
                     }
@@ -143,10 +143,10 @@ namespace OrangeOrchard.Controllers
                 //returns to index page
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
-        }
+            return View();
+        }*/
 
-        // GET: Movies/Delete/5
+        // GET: Trees/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -154,23 +154,23 @@ namespace OrangeOrchard.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Tree
+            var tree = await _context.Tree
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (movie == null)
+            if (tree == null)
             {
                 return NotFound();
             }
 
-            return View(movie);
+            return View(tree);
         }
 
-        // POST: Movies/Delete/5
+        // POST: Trees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movie = await _context.Tree.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Tree.Remove(movie);
+            var tree = await _context.Tree.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Tree.Remove(tree);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
